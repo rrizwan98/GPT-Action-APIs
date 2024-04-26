@@ -1,0 +1,15 @@
+
+instructions: >
+  Which of these glasses you recommend for me based on the shape of my face?
+  Explain how you reach out to this decision.
+  Provide your recommendation based on my face shape, and reasoning for each in JSON format.
+
+safety_settings:
+  - category: "HARM_CATEGORY_HARASSMENT"
+    threshold: "BLOCK_MEDIUM_AND_ABOVE"
+  - category: "HARM_CATEGORY_HATE_SPEECH"
+    threshold: "BLOCK_MEDIUM_AND_ABOVE"
+  - category: "HARM_CATEGORY_SEXUALLY_EXPLICIT"
+    threshold: "BLOCK_MEDIUM_AND_ABOVE"
+  - category: "HARM_CATEGORY_DANGEROUS_CONTENT"
+    threshold: "BLOCK_MEDIUM_AND_ABOVE"

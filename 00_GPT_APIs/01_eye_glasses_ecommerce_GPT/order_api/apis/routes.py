@@ -3,6 +3,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session, joinedload
 from apis.models import Glasses, Order, OrderItem, User, Shipping
 from apis.schemas import GlassesModel, OrderCreate, OrderDisplay, ProductDetail, OrderItemDisplay
+from apis.recommendation import recommendation
 from apis.database import SessionLocal
 from typing import List, Any
 import datetime
@@ -108,6 +109,16 @@ def create_order(order_details: OrderCreate, db: Session = Depends(get_db)):
         items=order_items
     )
 
+@router.post("/recommendation")
+async def poisonous_plants(
+    message:str,
+    title:str = "eye glasses recommendation"):
+    """
+    Get he Description of poisonous plants based on the provided location.
+    
+    """
+    description:str = recommendation(message)
+    return {"title": title, "recommendation": description}
 
 @router.get("/orders/history/{user_id}", response_model=List[OrderDisplay])
 def order_history(user_id: int, db: Session = Depends(get_db)):
