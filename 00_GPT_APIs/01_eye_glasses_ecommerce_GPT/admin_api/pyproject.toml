@@ -2,16 +2,16 @@
 name = "admin-api"
 version = "0.1.0"
 description = ""
-authors = ["Your Name <you@example.com>"]
+authors = ["Raza <rrizwan1998@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
-sqlalchemy = "^2.0.29"
 psycopg2 = "^2.9.9"
 asyncpg = "^0.29.0"
 fastapi = "^0.110.2"
 uvicorn = "^0.29.0"
+sqlalchemy = "^2.0.29"
 
 
 [build-system]

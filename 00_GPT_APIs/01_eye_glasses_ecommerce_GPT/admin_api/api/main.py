@@ -1,7 +1,7 @@
 from fastapi import FastAPI, Depends
 from sqlalchemy.orm import Session
-from models import Glasses, GlassType  # Import models and enums
-from database import SessionLocal  # Import your database session
+from api.models import Glasses, GlassType  # Import models and enums
+from api.database import SessionLocal  # Import your database session
 from pydantic import BaseModel, conlist
 from typing import List
 
