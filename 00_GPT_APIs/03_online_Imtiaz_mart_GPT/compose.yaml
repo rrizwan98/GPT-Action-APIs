@@ -1,0 +1,21 @@
+version: '3.8'
+name: onlineMart
+services:
+  api:
+    build: 
+      context: .
+      dockerfile: Dockerfile.dev
+    volume:
+      - ./login_or_signup:/code
+    ports:
+      - "8000:8000"
+  postgres:
+    image: "postgres:latest"
+    environment:
+      POSTGRES_DB: onlineMart
+      POSTGRES_USER: imtiaz
+      POSTGRES_PASSWORD: imtiaz
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
