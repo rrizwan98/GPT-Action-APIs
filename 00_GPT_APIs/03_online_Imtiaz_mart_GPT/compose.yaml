@@ -1,27 +1,13 @@
-version: '3.8'
-name: onlineMart
+version: "3.9"
+
+name: imtiaz_mart_gpt
+
 services:
   api:
-    build: 
-      context: .
-      dockerfile: Dockerfile.dev
-    volume:
-      - ./login_or_signup:/code
-    depends_on:
-        - postgres_db
+    build:
+      context: ./login_or_signup
+      dockerfile: ./Dockerfile
     ports:
-      - "8000:8000"
-  postgres:
-    image: "postgres:latest"
+      - "8000:8000"  # Expose container port 8000 to host port 8000  
     environment:
-      POSTGRES_DB: onlineMart
-      POSTGRES_USER: imtiaz
-      POSTGRES_PASSWORD: imtiaz
-    ports:
-      - "5433:5432"
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-
-# volumes:
-#   postgres_db:
-#     driver: local
+      DATABASE_URL: "postgresql://neondb_owner:kz7jBqK5RQNM@ep-flat-snow-a59h4e3g.us-east-2.aws.neon.tech/neondb?sslmode=require"

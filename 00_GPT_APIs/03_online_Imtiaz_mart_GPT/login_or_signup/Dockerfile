@@ -1,6 +1,6 @@
 
 # Use an official Python runtime as a parent image
-FROM python:3.12
+FROM python:3.11
 
 LABEL maintainer="github: rrizwan98"
 # Set the working directory in the container
@@ -28,4 +28,4 @@ RUN poetry install
 EXPOSE 8000
 
 # Run the app. CMD can be overridden when starting the container
-CMD ["poetry", "run", "uvicorn", "apis.main:app", "--host", "0.0.0.0", "--reload"]
+CMD ["poetry", "run", "uvicorn", "api.signup.main:app", "--host", "0.0.0.0", "--reload"]
