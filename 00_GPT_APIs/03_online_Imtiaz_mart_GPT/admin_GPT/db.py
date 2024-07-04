@@ -31,3 +31,23 @@ def add_product(product_details):
         connection.execute(query, product_details)
         connection.commit()  # Explicitly commit the transaction
         return {"message": "Product added successfully!"}
+    
+def update_product(product_name, product_details):
+    """ Update an existing product in the database based on the product name """
+    values = {key: value for key, value in product_details.items() if value is not None}
+    set_clause = ", ".join([f"{key} = :{key}" for key in values.keys()])
+    query = text(f"UPDATE grocery_data SET {set_clause} WHERE TRIM(LOWER(product_name)) = TRIM(LOWER(:product_name))")
+
+    with engine.connect() as connection:
+        values['product_name'] = product_name
+        print("Executing SQL:", query)
+        print("With values:", values)
+        result = connection.execute(query, values)
+        connection.commit()
+
+        print("Rows affected:", result.rowcount)
+        
+        if result.rowcount:
+            return {"message": "Product updated successfully!"}
+        else:
+            return {"message": "Product not found or no updates performed."}

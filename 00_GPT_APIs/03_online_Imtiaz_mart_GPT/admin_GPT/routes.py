@@ -1,17 +1,11 @@
 from fastapi import FastAPI, HTTPException
 from fastapi import HTTPException, Request
 from typing import Union
-from admin_GPT.db import get_all_products, get_product_by_name_or_id, add_product
+from admin_GPT.db import get_all_products, get_product_by_name_or_id, add_product, update_product
+from admin_GPT.models import ProductUpdate, Product
 from pydantic import BaseModel
 
 app = FastAPI()
-
-class Product(BaseModel):
-    category: str
-    sub_category: str
-    product_name: str
-    price: float
-    image_url: str
 
 @app.get("/products")
 def read_products():
@@ -39,6 +33,15 @@ def create_product(product_details: Product):
     """ Endpoint to add a new product """
     try:
         response = add_product(product_details.dict())
+        return response
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+    
+@app.put("/update_product/{product_name}")
+def update_product_details(product_name: str, product_update: ProductUpdate):
+    """ Endpoint to update a product by name """
+    try:
+        response = update_product(product_name, product_update.dict(exclude_none=True))
         return response
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
