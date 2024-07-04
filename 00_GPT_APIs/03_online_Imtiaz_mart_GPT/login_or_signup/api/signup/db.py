@@ -52,7 +52,6 @@ def create_admin_user(email, username, password):
         db_session.commit()
         return True
     except Exception as e:
-        print(e)
         db_session.rollback()
         return False
     finally:
