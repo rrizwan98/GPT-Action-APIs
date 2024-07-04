@@ -51,3 +51,16 @@ def update_product(product_name, product_details):
             return {"message": "Product updated successfully!"}
         else:
             return {"message": "Product not found or no updates performed."}
+
+def delete_product(product_name):
+    """ Delete a product from the database based on the product name """
+    query = text("DELETE FROM grocery_data WHERE TRIM(LOWER(product_name)) = TRIM(LOWER(:product_name))")
+
+    with engine.connect() as connection:
+        result = connection.execute(query, {'product_name': product_name})
+        connection.commit()
+
+        if result.rowcount:
+            return {"message": "Product deleted successfully!"}
+        else:
+            return {"message": "Product not found."}

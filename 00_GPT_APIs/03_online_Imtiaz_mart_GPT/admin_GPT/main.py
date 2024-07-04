@@ -1,4 +1,9 @@
-from admin_GPT.routes import app
+from admin_GPT.routes import router
+from fastapi import FastAPI
+
+app = FastAPI()
+app.include_router(router)
+
 
 if __name__ == "__main__":
     import uvicorn
