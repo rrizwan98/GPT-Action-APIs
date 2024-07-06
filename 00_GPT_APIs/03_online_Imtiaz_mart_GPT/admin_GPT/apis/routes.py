@@ -1,9 +1,9 @@
+from db import get_all_products, get_product_by_name_or_id, add_product, update_product, delete_product
 from fastapi import FastAPI, HTTPException, APIRouter
+from models import ProductUpdate, Product
 from fastapi import HTTPException, Request
-from typing import Union
-from admin_GPT.db import get_all_products, get_product_by_name_or_id, add_product, update_product, delete_product
-from admin_GPT.models import ProductUpdate, Product
 from pydantic import BaseModel
+from typing import Union
 
 router = APIRouter()
 

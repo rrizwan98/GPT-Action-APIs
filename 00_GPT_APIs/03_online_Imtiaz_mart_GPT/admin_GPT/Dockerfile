@@ -15,8 +15,8 @@ RUN apt-get update && apt-get install -y \
 RUN pip install poetry
 
 # Copy the current directory contents into the container at /code
-COPY . /code/api/
-COPY ./pyproject.toml /code/api/
+COPY . /code/
+COPY ./pyproject.toml /code/
 
 # Configuration to avoid creating virtual environments inside the Docker container
 RUN poetry config virtualenvs.create false

@@ -2,7 +2,7 @@ import pandas as pd
 from sqlalchemy import create_engine, text
 # pip install openpyxl
 # Load the Excel file
-excel_file_path = 'admin_GPT/Product_Details_Extract.xlsx'
+excel_file_path = 'admin_GPT/apis/Product_Details_Extract.xlsx'
 data = pd.read_excel(excel_file_path)
 
 # Rename columns to match the database schema

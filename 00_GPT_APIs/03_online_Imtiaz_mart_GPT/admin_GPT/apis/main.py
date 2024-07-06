@@ -1,4 +1,4 @@
-from admin_GPT.routes import router
+from routes import router
 from fastapi import FastAPI
 
 app = FastAPI()

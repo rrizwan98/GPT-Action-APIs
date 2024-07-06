@@ -2,7 +2,6 @@ from sqlalchemy import create_engine
 from pandas import read_sql_query
 from sqlalchemy import text
 
-
 # Initialize the database connection
 engine = create_engine("postgresql://neondb_owner:kz7jBqK5RQNM@ep-flat-snow-a59h4e3g.us-east-2.aws.neon.tech/neondb?sslmode=require")
 
