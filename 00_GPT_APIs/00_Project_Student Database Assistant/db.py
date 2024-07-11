@@ -3,7 +3,7 @@ from sqlmodel import SQLModel, create_engine, Session, Field
 from typing import Optional
 
 # Database URL
-DATABASE_URL = "postgresql://raza03492128287:wl0IsGkS8Fug@ep-frosty-sunset-a5cam3pe.us-east-2.aws.neon.tech/neondb?sslmode=require"
+DATABASE_URL = "postgresql://neondb_owner:kz7jBqK5RQNM@ep-flat-snow-a59h4e3g.us-east-2.aws.neon.tech/neondb?sslmode=require"
 
 engine = create_engine(DATABASE_URL)
 

@@ -1,0 +1,34 @@
+{
+    "containerApps.deploymentConfigurations": [
+        {
+            "label": "admingpt",
+            "type": "AcrDockerBuildRequest",
+            "dockerfilePath": "00_GPT_APIs\\03_online_Imtiaz_mart_GPT\\admin_GPT\\Dockerfile",
+            "srcPath": "00_GPT_APIs\\03_online_Imtiaz_mart_GPT\\admin_GPT",
+            "envPath": "",
+            "resourceGroup": "onlinemartgpt",
+            "containerApp": "admingpt",
+            "containerRegistry": "onlinemartgpta20d8b"
+        },
+        {
+            "label": "adminapi",
+            "type": "AcrDockerBuildRequest",
+            "dockerfilePath": "00_GPT_APIs\\03_online_Imtiaz_mart_GPT\\admin_GPT\\Dockerfile",
+            "srcPath": "00_GPT_APIs\\03_online_Imtiaz_mart_GPT\\admin_GPT",
+            "envPath": "",
+            "resourceGroup": "martgpt",
+            "containerApp": "adminapi",
+            "containerRegistry": "onlinemartgpta20d8b"
+        },
+        {
+            "label": "adminapi",
+            "type": "AcrDockerBuildRequest",
+            "dockerfilePath": "00_GPT_APIs\\03_online_Imtiaz_mart_GPT\\admin_GPT\\Dockerfile",
+            "srcPath": "00_GPT_APIs\\03_online_Imtiaz_mart_GPT\\admin_GPT",
+            "envPath": "",
+            "resourceGroup": "martgpt",
+            "containerApp": "adminapi",
+            "containerRegistry": "onlinemartgpta20d8b"
+        }
+    ]
+}
