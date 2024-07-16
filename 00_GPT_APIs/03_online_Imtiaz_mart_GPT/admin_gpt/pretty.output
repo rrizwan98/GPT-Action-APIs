@@ -1,0 +1,28 @@
+Feature: Product management # features/get_products.feature:1
+  As an API client
+  I want to manage products
+  Scenario: Get all products                 # features/get_products.feature:5
+    Given I have product data                # features/steps/product_steps.py:6
+    When I request all products              # features/steps/product_steps.py:10
+    Then I should receive a list of products # features/steps/product_steps.py:14
+
+  Scenario: Get a single product by ID        # features/get_products.feature:10
+    Given I have product data                 # features/steps/product_steps.py:6
+    When I request a product with ID "2"      # features/steps/product_steps.py:19
+    Then I should receive the product details # features/steps/product_steps.py:23
+
+  Scenario: Create a product                            # features/get_products.feature:15
+    Given I have new product details                    # features/steps/product_steps.py:28
+    When I create a product                             # features/steps/product_steps.py:40
+    Then I should receive a successful creation message # features/steps/product_steps.py:52
+
+  Scenario: Update a product by ID                # features/get_products.feature:20
+    Given I have existing product data            # features/steps/product_steps.py:57
+    When I update a product with ID "1002"        # features/steps/product_steps.py:70
+    Then I should receive updated product details # features/steps/product_steps.py:74
+
+  Scenario: Delete a product by ID                      # features/get_products.feature:25
+    Given I have product data                           # features/steps/product_steps.py:6
+    When I delete a product with ID "1002"              # features/steps/product_steps.py:82
+    Then I should receive a successful deletion message # features/steps/product_steps.py:86
+

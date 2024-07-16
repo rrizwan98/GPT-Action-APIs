@@ -6,7 +6,7 @@ from routes import router as product_router
 app = FastAPI(
     title = "Product API",
     description = "A simple API to perform CRUD operations on products.",
-    servers = [{"url": "https://adminapi.blackflower-9e2d4f52.eastus2.azurecontainerapps.io/", "description": "Deploy Admin api in Azure Container APP"}],
+    # servers = [{"url": "https://adminapi.blackflower-9e2d4f52.eastus2.azurecontainerapps.io/", "description": "Deploy Admin api in Azure Container APP"}],
     version = "0.1"
 )
 

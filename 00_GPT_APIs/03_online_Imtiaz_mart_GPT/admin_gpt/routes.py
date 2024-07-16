@@ -77,3 +77,5 @@ def delete_product(product_id: int, session: Session = Depends(get_session)):
     session.delete(product)
     session.commit()
     return (f"Product deleted successfully")
+
+
